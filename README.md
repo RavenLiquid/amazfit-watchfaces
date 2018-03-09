@@ -75,13 +75,12 @@ After installing you should have these watchfaces
 
 ![Malvarez watchface](https://github.com/RavenLiquid/amazfit-watchfaces/raw/master/app/src/main/res/drawable-nodpi/preview_malvarez.png)
 
-![Fuzzy Text](https://github.com/RavenLiquid/amazfit-watchfaces/master/app/src/main/res/drawable-nodpi/preview_fuzzytext.png "")
+![Fuzzy Text](https://github.com/RavenLiquid/amazfit-watchfaces/raw/master/app/src/main/res/drawable-nodpi/preview_fuzzytext.png "")
 
-![Text Time](https://github.com/RavenLiquid/amazfit-watchfaces/master/app/src/main/res/drawable-nodpi/preview_texttime.png?raw=true "")
+![Text Time](https://github.com/RavenLiquid/amazfit-watchfaces/raw/master/app/src/main/res/drawable-nodpi/preview_texttime.png?raw=true "")
 
-![Three Lines](https://github.com/RavenLiquid/amazfit-watchfaces/master/app/src/main/res/drawable-nodpi/preview_threelines.png?raw=true "")
+![Three Lines](https://github.com/RavenLiquid/amazfit-watchfaces/raw/master/app/src/main/res/drawable-nodpi/preview_threelines.png?raw=true "")
 
-![Fancy Digits](https://github.com/RavenLiquid/amazfit-watchfaces/blob/master/app/src/main/res/drawable-nodpi/preview_hugetext.png?raw=true "")
+![Fancy Digits](https://github.com/RavenLiquid/amazfit-watchfaces/raw/master/app/src/main/res/drawable-nodpi/preview_hugetext.png?raw=true "")
 
-![Big Weather](https://github.com/RavenLiquid/amazfit-watchfaces/blob/master/app/src/main/res/drawable-nodpi/preview_hugeweather.png?raw=true "")
-
+![Big Weather](https://github.com/RavenLiquid/amazfit-watchfaces/raw/master/app/src/main/res/drawable-nodpi/preview_hugeweather.png?raw=true "")
