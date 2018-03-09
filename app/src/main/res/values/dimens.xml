@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="drbourbon_fuzzytext_font_size">76px</dimen>
+    <dimen name="hugedigit_offset">-4px</dimen>
+    <dimen name="threelines_font_size">62px</dimen>
+    <dimen name="threelines_voffset">6px</dimen>
+    <dimen name="weather_font_size">22px</dimen>
+
 
     <dimen name="malvarez_time_hour_left">160px</dimen>
     <dimen name="malvarez_time_hour_top">145px</dimen>

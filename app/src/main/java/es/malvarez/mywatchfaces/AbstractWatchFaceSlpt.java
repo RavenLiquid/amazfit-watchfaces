@@ -28,7 +28,21 @@ public abstract class AbstractWatchFaceSlpt extends AbstractSlptClock {
     }
 
     @Override
-    protected final SlptLayout createClockLayout() {
+    protected final SlptLayout createClockLayout26WC() {
+        SlptAbsoluteLayout result = new SlptAbsoluteLayout();
+        for (SlptViewComponent component : clock.buildSlptViewComponent(this)) {
+            result.add(component);
+        }
+        for (Widget widget : widgets) {
+            for (SlptViewComponent component : widget.buildSlptViewComponent(this)) {
+                result.add(component);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    protected SlptLayout createClockLayout8C() {
         SlptAbsoluteLayout result = new SlptAbsoluteLayout();
         for (SlptViewComponent component : clock.buildSlptViewComponent(this)) {
             result.add(component);
