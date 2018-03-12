@@ -35,6 +35,8 @@ import java.util.List;
 import java.lang.reflect.Field;
 
 import com.ravenliquid.watchfaces.R;
+import com.ravenliquid.watchfaces.Utility;
+
 import es.malvarez.mywatchfaces.resource.ResourceManager;
 
 /**
@@ -111,12 +113,12 @@ public class MalvarezClock extends DigitalClockWidget {
         SlptLinearLayout hourLayout = new SlptLinearLayout();
         hourLayout.add(new SlptHourHView());
         hourLayout.add(new SlptHourLView());
-        setStringPictureArrayForAll(hourLayout, this.digitalNums);
+        Utility.setStringPictureArrayForAll(hourLayout, this.digitalNums);
 
         SlptLinearLayout minuteLayout = new SlptLinearLayout();
         minuteLayout.add(new SlptMinuteHView());
         minuteLayout.add(new SlptMinuteLView());
-        setStringPictureArrayForAll(minuteLayout, this.digitalNums);
+        Utility.setStringPictureArrayForAll(minuteLayout, this.digitalNums);
 
         Typeface timeTypeFace = ResourceManager.getTypeFace(service.getResources(), ResourceManager.Font.BEBAS_NEUE);
 
@@ -170,29 +172,5 @@ public class MalvarezClock extends DigitalClockWidget {
                 (int) service.getResources().getDimension(R.dimen.malvarez_week_top_slpt));
 
         return Arrays.asList(background, hourLayout, minuteLayout, dayLayout, monthLayout, weekView);
-    }
-
-    private void setStringPictureArrayForAll(SlptLinearLayout layout, String[] var1) {
-        Field f = null;
-        try {
-            f = layout.getClass().getDeclaredField("list");
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-        f.setAccessible(true);
-        ArrayList<SlptViewComponent> list = null; //IllegalAccessException
-        try {
-            list = (ArrayList<SlptViewComponent>) f.get(layout);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-        for(int var2 = 0; var2 < list.size(); ++var2) {
-            SlptViewComponent var3 = (SlptViewComponent)list.get(var2);
-            if(var3 instanceof SlptNumView) {
-                ((SlptNumView)var3).setStringPictureArray(var1);
-            }
-        }
-
     }
 }
