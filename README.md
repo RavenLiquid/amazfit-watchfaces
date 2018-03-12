@@ -54,6 +54,7 @@ d2j-dex2jar.sh classes.dex
 Now you should have 2 jar files, the  HuamiWatchFaces2.jar and probably classes-dex2jar.jar.
 Open both of them with something like 7Zip again **don't extract them, just open** and go to com\ingenic\iwds in both.
 In your target jar (HuamiWatchFaces2) delete the HardwareList.class, and in your donor (classes-dex2jar) extract the HardwareList.class. 
+In your target jar (HuamiWatchFaces2) also delete com\huami\watch\watchface\slpt\Lock\LowPowerClock.class.
 Now place the HardwareList.class in your target jar so it looks the same as before but now with the HardwareList.class from your donor.
 
 Great! You should now have a working HuamiWatchFaces2.jar.

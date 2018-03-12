@@ -7,6 +7,7 @@ import android.graphics.Rect;
 import android.text.TextPaint;
 
 import com.huami.watch.watchface.util.Util;
+import com.ingenic.iwds.slpt.view.core.SlptLayout;
 import com.ingenic.iwds.slpt.view.core.SlptLinearLayout;
 import com.ingenic.iwds.slpt.view.core.SlptNumView;
 import com.ingenic.iwds.slpt.view.core.SlptPictureView;
@@ -35,6 +36,7 @@ import es.malvarez.mywatchfaces.resource.ResourceManager;
 import es.malvarez.mywatchfaces.widget.DigitalClockWidget;
 
 import com.ravenliquid.watchfaces.R;
+import com.ravenliquid.watchfaces.Utility;
 
 /**
  * Created by fabio on 23/05/17.
@@ -118,7 +120,7 @@ public class ThreeLines extends DigitalClockWidget {
                 service.getResources().getColor(R.color.threelines_date_color),
                 ResourceManager.getTypeFace(service.getResources(), ResourceManager.Font.OPEN24)
         );
-        setStringPictureArrayForAll(var21, this.digitalNums);
+        Utility.setStringPictureArrayForAll(var21, this.digitalNums);
         var21.setStart(x, y);
         var21.centerHorizontal = 1;
         var21.alignX = 2;
@@ -149,7 +151,7 @@ public class ThreeLines extends DigitalClockWidget {
                 service.getResources().getColor(R.color.threelines_time_color),
                 ResourceManager.getTypeFace(service.getResources(), ResourceManager.Font.OPEN24)
         );
-        setStringPictureArrayForAll(var21, this.digitalNums);
+        Utility.setStringPictureArrayForAll(var21, this.digitalNums);
         var21.setStart(x, y);
         var21.centerHorizontal = 1;
         var21.alignX = 2;
@@ -179,29 +181,4 @@ public class ThreeLines extends DigitalClockWidget {
 
         return retVal;
     }
-
-    private void setStringPictureArrayForAll(SlptLinearLayout layout, String[] var1) {
-        Field f = null;
-        try {
-            f = layout.getClass().getDeclaredField("list");
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        }
-        f.setAccessible(true);
-        ArrayList<SlptViewComponent> list = null; //IllegalAccessException
-        try {
-            list = (ArrayList<SlptViewComponent>) f.get(layout);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-        for(int var2 = 0; var2 < list.size(); ++var2) {
-            SlptViewComponent var3 = (SlptViewComponent)list.get(var2);
-            if(var3 instanceof SlptNumView) {
-                ((SlptNumView)var3).setStringPictureArray(var1);
-            }
-        }
-
-    }
-
 }

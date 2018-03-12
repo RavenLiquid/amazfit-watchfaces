@@ -125,4 +125,13 @@
         <item>@string/w20</item>
         <item>@string/w21</item>
     </string-array>
+
+    <string name="timetravel_distance_km_unit_path">guard/shiguanglicheng/watchface_slpt_number_km.png</string>
+    <string name="timetravel_distance_mi_unit_path">guard/shiguanglicheng/en/watchface_slpt_number_km.png</string>
+    <string name="timetravel_week_path">guard/shiguanglicheng/en/watchface_slpt_number_week_%d.png</string>
+    <string name="watch_label_timetravel_pace">Time travel Pace</string>
+
+    <string name="low_battery_protect">Low battery</string>
+    <string name="low_battery_please_charging">Low battery, please charge</string>
+
 </resources>
