@@ -20,8 +20,8 @@ Currently you will need to be able to build this code and have the original Huam
 - Android Studio
 - Android SDK version 21 (Android Studio should prompt you)
 - ADB (should come with Android Studio)
-- The HuamiWatchFaces.odex or HuamiWatchFaces2.odex from you watch (read below)
-- An older HuamiWatchFaces.odex (read below)
+- The `HuamiWatchFaces.odex` or `HuamiWatchFaces2.odex` from you watch (read below)
+- An older `HuamiWatchFaces.odex` (read below)
 - oat2dex ([here](https://github.com/testwhat/SmaliEx))
 - dex2jar ([here](https://github.com/pxb1988/dex2jar))
 - This repo
@@ -35,7 +35,7 @@ Then use a terminal/console to:
 adb pull /system/app/HuamiWatchFaces/mips/HuamiWatchFaces.odex
 ```
 
-To streamline the instructions further rename the downloaded file to HuamiWatchFaces2.odex
+To streamline the instructions further rename the downloaded file to `HuamiWatchFaces2.odex`
 
 **For Statos**
 ```sh
@@ -54,7 +54,7 @@ d2j-dex2jar.sh HuamiWatchFaces2.dex
 
 **You should see some GLITCH: zero-width instruction messages**
 One of them is HardwareList, this is a problem and we will fix it.
-Make sure the result is named HuamiWatchFaces2.jar (rename if not)
+Make sure the result is named `HuamiWatchFaces2.jar` (rename if not)
 
 Now get the older HuamiWatchFaces file. Open the APK with something like 7Zip and extract the classes.dex and then:
 
@@ -62,25 +62,27 @@ Now get the older HuamiWatchFaces file. Open the APK with something like 7Zip an
 d2j-dex2jar.sh classes.dex
 ```
 
-Now you should have 2 jar files, the  HuamiWatchFaces2.jar and probably classes-dex2jar.jar.
-Open both of them with something like 7Zip again **don't extract them, just open** and go to com\ingenic\iwds in both.
-In your target jar (HuamiWatchFaces2) delete the HardwareList.class, and in your donor (classes-dex2jar) extract the HardwareList.class. 
-In your target jar (HuamiWatchFaces2) also delete com\huami\watch\watchface\slpt\Lock\LowPowerClock.class.
-Now place the HardwareList.class in your target jar so it looks the same as before but now with the HardwareList.class from your donor.
+Now you should have 2 jar files, the  `HuamiWatchFaces2.jar` and probably `classes-dex2jar.jar`.
+Open both of them with something like 7Zip again **don't extract them, just open** and go to `com\ingenic\iwds` in both.
+In your target jar (HuamiWatchFaces2) delete the HardwareList.class, and in your donor (classes-dex2jar) extract the `HardwareList.class`. 
+In your target jar (HuamiWatchFaces2) also delete `com\huami\watch\watchface\slpt\Lock\LowPowerClock.class`.
+Now place the `HardwareList.class` in your target jar so it looks the same as before but now with the `HardwareList.class` from your donor.
 
-Great! You should now have a working HuamiWatchFaces2.jar.
+Great! You should now have a working `HuamiWatchFaces2.jar`.
 
 ## Building the repo ##
 If you haven't already, clone this repo to your PC.
-Now take your HuamiWatchFaces2.jar and place it in app\src\main\java\es\malvarez\mywatchfaces\libs.
+Now take your `HuamiWatchFaces2.jar` and place it in `app\src\main\java\es\malvarez\mywatchfaces\libs`.
 
 Open the project with Android Studio and build the project with gradle (click the hammer icon in the top left bar).
 This should complete with no errors.
 
-You should now have the APK in app\build\outputs\apk.
+You should now have the APK in `app\build\outputs\apk`.
 
 ## Installing the APK ##
-adb install app/build/outputs/apk/debug/app-debug.apk 
+```sh
+adb install app/build/outputs/apk/debug/app-debug.apk
+```
 Or you can take the release one.
 
 After installing you should have these watchfaces
