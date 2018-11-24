@@ -52,9 +52,9 @@ java -jar oat2dex.jar -a 22 odex HuamiWatchFaces2.odex
 d2j-dex2jar.sh HuamiWatchFaces2.dex
 ```
 
-**You should see some GLITCH: zero-width instruction messages**
+**You should see some GLITCH: zero-width instruction messages**  
 One of them is HardwareList, this is a problem and we will fix it.  
-Make sure the result is named `HuamiWatchFaces2.jar` (rename if not)
+Make sure the result is named `HuamiWatchFaces2.jar` (rename if not)  
 
 Now get the older HuamiWatchFaces file. Open the APK with something like 7Zip and extract the classes.dex and then:
 
