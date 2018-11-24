@@ -29,27 +29,38 @@ Currently you will need to be able to build this code and have the original Huam
 ## Getting the HuamiWatchFaces files
 To get the odex files needed for your watch, connect it via USB.
 Then use a terminal/console to:
+
 **For Pace**
+```sh
 adb pull /system/app/HuamiWatchFaces/mips/HuamiWatchFaces.odex
+```
+
 To streamline the instructions further rename the downloaded file to HuamiWatchFaces2.odex
 
 **For Statos**
+```sh
 adb pull /system/app/HuamiWatchFaces/mips/HuamiWatchFaces2.odex
+```
 
 Then you will need an older one, i suggest downloading the APK from [here](http://amazfitcentral.com/2017/08/19/amazfit-amazing-watch-faces/). The link is below the image.
 
 ## Converting the files to jars
 You will need to convert the odex and dex files in to JAR files so the code can build against it.
 
+```sh
 java -jar oat2dex.jar -a 22 odex HuamiWatchFaces2.odex
 d2j-dex2jar.sh HuamiWatchFaces2.dex
+```
 
 **You should see some GLITCH: zero-width instruction messages**
 One of them is HardwareList, this is a problem and we will fix it.
 Make sure the result is named HuamiWatchFaces2.jar (rename if not)
 
 Now get the older HuamiWatchFaces file. Open the APK with something like 7Zip and extract the classes.dex and then:
+
+```sh
 d2j-dex2jar.sh classes.dex
+```
 
 Now you should have 2 jar files, the  HuamiWatchFaces2.jar and probably classes-dex2jar.jar.
 Open both of them with something like 7Zip again **don't extract them, just open** and go to com\ingenic\iwds in both.
