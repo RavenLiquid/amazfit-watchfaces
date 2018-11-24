@@ -56,7 +56,7 @@ d2j-dex2jar.sh HuamiWatchFaces2.dex
 One of them is HardwareList, this is a problem and we will fix it.  
 Make sure the result is named `HuamiWatchFaces2.jar` (rename if not)  
 
-Now get the older HuamiWatchFaces file. Open the APK with something like 7Zip and extract the classes.dex and then:
+Now get the older HuamiWatchFaces file. Open the APK with something like 7Zip and extract the `classes.dex` and then:
 
 ```sh
 d2j-dex2jar.sh classes.dex
